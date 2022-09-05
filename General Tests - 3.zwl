@@ -1,0 +1,23 @@
+@Test("all checkbox can be checked and displayed") {
+  openUrl(globals.urlPrefix + "selectable_elements_c.html")
+  elemAccess = 3000
+  switchFrame(findElement("iframe[name='result']", by.cssSelector))
+  chk1 = findElement("#chk1")
+  chk2 = findElement("#chk2")
+  chk3 = findElement("#chk3")
+  all = [chk1, chk2, chk3]
+  
+  # !!! important, take a note that if 'arguments' accessed inside anonymous function body, drivers
+  # can't replace them with provided arguments. Thus keeping them out of it.
+  hideAll = format(`const arg0 = arguments[0], arg1 = arguments[1], arg2 = arguments[2];
+  window.setTimeout(function() {
+  arg0.style.display = 'none';
+  arg1.style.display = 'none';
+  arg2.style.display = 'none';
+  }, %s)`, elemAccess)
+  # lets hide all
+  executeScript(hideAll, chk1, chk2, chk3)
+  # to confirm after executeScript returns, element is not yet hidden and a wait is required
+  assertTrue(allElementsDisplayed(all))
+}
+

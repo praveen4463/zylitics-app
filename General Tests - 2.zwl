@@ -1,0 +1,39 @@
+@Test("validate alert shows") {
+  openUrl("https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout")
+  elemAccess = 3000 # the timeout used in setTimeout for element related untilXX functions
+  resultFrame = "iframe[name='result']"
+  assertTrue(getTimeout(timeouts.elemAccess) > elemAccess)
+  # script shows alert after elemAccess time has passed, asynchronously
+  executeScript(format("window.setTimeout(window.alert, %s, 'i am done');", elemAccess))
+  # to confirm that after executeScript returns, there is no alert present and a wait is required.
+  assertThrows(exceptions.noAlertPresentEx, acceptAlert())
+  untilAlertPresent()
+  acceptAlert()
+}
+
+@Test("validate alert shows - 1") {
+  openUrl("https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout")
+  elemAccess = 3000 # the timeout used in setTimeout for element related untilXX functions
+  resultFrame = "iframe[name='result']"
+  assertTrue(getTimeout(timeouts.elemAccess) > elemAccess)
+  # script shows alert after elemAccess time has passed, asynchronously
+  executeScript(format("window.setTimeout(window.alert, %s, 'i am done');", elemAccess))
+  # to confirm that after executeScript returns, there is no alert present and a wait is required.
+  assertThrows(exceptions.noAlertPresentEx, acceptAlert())
+  untilAlertPresent()
+  acceptAlert()
+}
+
+@Test("validate alert shows - 2") {
+  openUrl("https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout")
+  elemAccess = 3000 # the timeout used in setTimeout for element related untilXX functions
+  resultFrame = "iframe[name='result']"
+  assertTrue(getTimeout(timeouts.elemAccess) > elemAccess)
+  # script shows alert after elemAccess time has passed, asynchronously
+  executeScript(format("window.setTimeout(window.alert, %s, 'i am done');", elemAccess))
+  # to confirm that after executeScript returns, there is no alert present and a wait is required.
+  assertThrows(exceptions.noAlertPresentEx, acceptAlert())
+  untilAlertPresent()
+  acceptAlert()
+}
+

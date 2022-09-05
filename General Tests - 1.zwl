@@ -1,0 +1,30 @@
+@Test("scroll to element") {
+  openUrl(globals.mdnDragEvent)
+  viewportHeight = executeScript("return window.innerHeight;")
+  frame = findElement(".sample-code-frame", by.cssSelector)
+  rectBefore = getElementRect(frame)
+  scroll(frame)
+  rectAfter = getElementViewportCoordinates(frame, false)
+  assertTrue(rectBefore.y > viewportHeight && rectAfter.y <= 1)
+}
+
+@Test("scroll to element - 1") {
+  openUrl(globals.mdnDragEvent)
+  viewportHeight = executeScript("return window.innerHeight;")
+  frame = findElement(".sample-code-frame", by.cssSelector)
+  rectBefore = getElementRect(frame)
+  scroll(frame)
+  rectAfter = getElementViewportCoordinates(frame, false)
+  assertTrue(rectBefore.y > viewportHeight && rectAfter.y <= 1)
+}
+
+@Test("scroll to element - 2") {
+  openUrl(globals.mdnDragEvent)
+  viewportHeight = executeScript("return window.innerHeight;")
+  frame = findElement(".sample-code-frame", by.cssSelector)
+  rectBefore = getElementRect(frame)
+  scroll(frame)
+  rectAfter = getElementViewportCoordinates(frame, false)
+  assertTrue(rectBefore.y > viewportHeight && rectAfter.y <= 1)
+}
+

@@ -1,0 +1,9 @@
+@Test("Can add 2 numbers") {
+  openUrl('https://google.com')
+  print(getCurrentUrl())
+}
+
+@Test("add_new_num") {
+  y = 1
+}
+
