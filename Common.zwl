@@ -7,3 +7,7 @@
   y = 1
 }
 
+@Test("go_to_google") {
+  openUrl('https://google.com')
+}
+

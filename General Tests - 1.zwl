@@ -1,4 +1,5 @@
 @Test("scroll to element") {
+  call('Common/go_to_google')
   openUrl(globals.mdnDragEvent)
   viewportHeight = executeScript("return window.innerHeight;")
   frame = findElement(".sample-code-frame", by.cssSelector)
@@ -9,6 +10,7 @@
 }
 
 @Test("scroll to element - 1") {
+  call('Common/go_to_google')
   openUrl(globals.mdnDragEvent)
   viewportHeight = executeScript("return window.innerHeight;")
   frame = findElement(".sample-code-frame", by.cssSelector)
