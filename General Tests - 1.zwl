@@ -1,5 +1,8 @@
 @Test("scroll to element") {
   call('Common/go_to_google')
+  if true {
+    print('if block worked correctly')
+  }
   openUrl(globals.mdnDragEvent)
   viewportHeight = executeScript("return window.innerHeight;")
   frame = findElement(".sample-code-frame", by.cssSelector)
